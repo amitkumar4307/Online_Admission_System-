@@ -1,0 +1,60 @@
+{% extends 'adminparent.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="container" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+    <div class="col-sm-12">
+        <h2 style="text-align:center;">Add Course</h2>   
+          <form action="{% url 'adminapp:courseadd' %}" method="post" class="row">
+          {% csrf_token %}
+            <table class="table text-dark w-75 mx-auto">
+                
+                <tr>
+                    <td>Course session</td>
+                    <td>
+                        
+                           
+                            <select id="adminTypeSelect" class="form-select mt-3" name="course_session" >
+                                <option selected>----Select Session----</option>
+                                <option value="1">2023-24</option>
+                                <option value="2">2024-25</option>
+                                <option value="3">2025-26</option>
+                                <option value="3">2026-27</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Course Name</td>
+                    <td>
+                    
+                            <input type="text" name="course_name" class="form-control">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Course Fees</td>
+                    <td>
+                        <input type="text" name="course_fees" class="form-control">
+                    </td>
+                </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>
+                            <input type="date" name="course_date" class="form-control">
+                        </td>
+                      
+                    </tr>
+                <tr>
+                    <td colspan="2" class="p-4 text-center">
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </td>
+                </tr>
+            </table>
+          </form>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

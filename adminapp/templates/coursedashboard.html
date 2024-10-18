@@ -1,0 +1,79 @@
+{% extends 'adminparent.html' %}
+{% load static %}
+{% block admin %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .card {
+            height: 100%;
+        }
+        .graph-placeholder {
+            height: 200px; /* Adjust as necessary */
+            background-color: #f0f0f0; /* Light gray for the graph area */
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Left Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"style="box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
+                   <h5 class="card-title text-center mt-4"> <a href="{% url 'adminapp:courseadd' %}"> <i class="fa-solid fa-book-open-reader fa-2x" style="color: black;"></i>  <button class="btn btn-outline-info mb-3 ">Add Course</button></a></h5>
+                   
+                </div>
+            </div>
+        </div>
+
+        <!-- Center Card -->
+        <div class="col-md-4">
+            <div class="card"style="box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
+                <div class="card-body text-center">
+                  <h5 class="card-title text-center mt-4"> <a href="#"> <i class="fa-regular fa-pen-to-square fa-2x" style="color: black;"></i><button class="btn btn-outline-dark mb-3 ">Edit Course</button></a></h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
+                  <h5 class="card-title text-center mt-4"> <a href="{% url 'adminapp:viewcourse' %}"><i class="fa-regular fa-eye fa-2x" style="color: black;"></i> <button class="btn btn-outline-success mb-3 ">View Course</button></a></h5>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Graph Chart Section -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="graph-placeholder"style="box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
+                <h6 class="text-center mt-5">Course Graph Chart</h6>
+                
+                <!-- You can integrate a graph library here (like Chart.js) -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}

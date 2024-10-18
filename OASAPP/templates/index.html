@@ -1,0 +1,1092 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Bio-tech Park</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    
+
+    <!-- Vendor CSS Files -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <style>
+      .carousel-wrapper {
+        width: 100%;
+        margin: auto;
+    }
+
+    .owl-carousel .item {
+        position: relative;
+        width: 250px; /* Set width to 298px */
+        height: 250px; /* Adjust height to fit image and text */
+        background-color: #fff; /* White background for the item */
+        border: px solid #fdfdfd; /* 4px border */
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; /* Shadow only on top */
+        border-radius: 5px; /* Rounded corners */
+        overflow: hidden; /* Ensure the shadow and border don't overflow */
+    }
+
+    .owl-carousel .item img {
+        width: 100%;
+        height: 200px; /* Fixed height for the image */
+        object-fit: cover;
+        transition: opacity 0.3s ease;
+    }
+
+    .owl-carousel .item:hover img {
+        opacity: 0.7; /* Slightly reduced opacity on hover */
+    }
+
+    .text-below {
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #f8f9fa; /* Light background for the text box */
+        border-top: 1px solid #ddd; /* Border on top of the text box */
+    }
+
+    .caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .owl-carousel .item:hover .caption {
+        opacity: 1;
+    }
+  </style>
+    
+
+
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header sticky-top">
+
+        <div class="topbar d-flex align-items-center">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+                <div class="contact-info d-flex align-items-center">
+                    <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com"> The Biotech Park Is Open From 9:00 am to 7:00 pm</a></i>
+
+                </div>
+                <div class="social-links d-none d-md-flex align-items-center">
+                    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Bar -->
+
+        <div class="branding d-flex align-items-center">
+
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+                <a href="index.html" class="logo d-flex align-items-center me-auto">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.png" alt=""> -->
+                    <h1 class="sitename"><img src="{% static 'img/biologo.png' %}" class="img-fluid" alt="">Biotech Park, Lucknow<br/>
+                        <p style="margin-left:42px;font-size:14px;">
+                            <i>Where cutting edge science prospers...</i></p>
+                    </h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="#hero" class="active">Home<br></a></li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              The Park <span class="hello"></span>
+                          </a>
+                          <ul class="dropdown-menu" style="border-radius:0px;">
+                              <li><a class="dropdown-item" href="#">Organization</a></li>
+                              <li><a class="dropdown-item" href="#">Why Biotech Park Lucknow ?</a></li>
+                              <li><a class="dropdown-item" href="#">Locations</a></li>
+                              <li><a class="dropdown-item" href="#">Certifications</a></li>
+                              <li><a class="dropdown-item" href="#">Our Collaborators</a></li>
+                              <li><a class="dropdown-item" href="#">Knowledge Network</a></li>
+                              <li><a class="dropdown-item" href="#">Outreach Activities</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item fw-bold" href="#">The People</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">CEO</a></li>
+                              <li><a class="dropdown-item" href="#">Distinguished Science And Members</a></li>
+                              <li><a class="dropdown-item" href="#">Scientific Staff</a></li>
+                              <li><a class="dropdown-item" href="#">Administration</a></li>
+                              <li><a class="dropdown-item" href="#">Technical Support</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Facilities <span class="hello"></span>
+                        </a>
+                        <ul class="dropdown-menu" style="border-radius:0px;">
+                            <li><a class="dropdown-item" href="/home/Services_Overview">Services</a></li>
+                            <li><a class="dropdown-item" href="/home/Research">Research Park & Labs</a></li>
+                            <li><a class="dropdown-item" href="/home/Error">Conference Hall</a></li>
+
+                        </ul>
+                       </li>
+                       <li class="nav-item dropdown dddd">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Skill Development <span class="hello"></span>
+                        </a>
+                        <ul class="dropdown-menu dddd" style="border-radius:0px;">
+                            <li><a class="dropdown-item hhh" href="/home/Error">HRD Overview </a></li>
+                            <li><a class="dropdown-item" href="/home/training_Programme">Training Program and Educational Outreach</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item dddd" href="/home/Certificate">Certificate Courses Approved By <br />Baba Saheb Bhimrao Amdedkar University </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/home/UP_Skill_Development">Up Skill Development Mission Sponsored <br />Program </a></li>
+                            <li><a class="dropdown-item" href="/home/Vocational_Training">Vocational Training</a></li>
+  
+  
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Business <span class="hello"></span>
+                      </a>
+                      <ul class="dropdown-menu" style="border-radius:0px;">
+                          <li><a class="dropdown-item" href="#">Tenders</a></li>
+                          <li><a class="dropdown-item" href="#">Policy Documents</a></li>
+                          <li><a class="dropdown-item" href="#">Resident Companies</a></li>
+                          <li><a class="dropdown-item" href="#">Biotech Funding</a></li>
+
+                      </ul>
+                  </li>
+                        <li><a href="#">Success Stories<br></a></li>
+                        <li><a href="#">News & Events<br></a></li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Contact
+                          </a>
+                          <ul class="dropdown-menu" style="border-radius:0px; margin-left:-300px;">
+                              <li><a class="dropdown-item" href="#">Training Program For Student From North-East India</a></li>
+                              <li><a class="dropdown-item" href="/home/Error">Training Program </a></li>
+                              <li><a class="dropdown-item" href="/home/Error">Services</a></li>
+                              <li><a class="dropdown-item" href="/home/Error">General</a></li>
+                              <li class="nav-item dropdown"><a class="dropdown-item" href="#">User</a>
+                                <ul class="dropdown-menu" style="border-radius:0px; margin-left:187px;">
+                                  <li><a class="dropdown-item" href="{% url 'studentlogin' %}">Login & Registration</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'contact' %}">Enquiry</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'contact' %}">Contact</a></li>
+                                </ul>
+                              </li>
+
+                          </ul>
+                        </li>
+                  
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="main">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero section light-background">
+
+            <img src="{% static 'img/ss.jpg' %}" alt="" data-aos="fade-in" style="background-size:cover;">
+
+            <div class="container position-relative">
+
+                <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+
+
+                </div>
+                <!-- End Welcome -->
+
+                <div class="content row gy-4">
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+                            <h3>Functional Biotech Park In North India</h3>
+                            <p>
+                                Bio Tech Park is India's top research center,leading in biotechnology and scientific advancements
+                            </p>
+                            <div class="text-center">
+                                <a href="#about" class="more-btn"><span>Explore now</span> <i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Why Box -->
+
+                </div>
+                <!-- End  Content-->
+
+            </div>
+
+        </section>
+        <!-- /Hero Section -->
+
+<!-- Appointment Section -->
+<section id="appointment" class="appointment section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+  
+    <h2>We Cover The Whole Spectrum</h2>
+  
+  <div class="row mt-3">
+   
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+          <div class="col-12 carousel-wrapper">
+              <div class="owl-carousel owl-theme">
+                  <div class="item">
+                      <img src="{% static 'img/clean.jpg' %}" alt="Image 1">
+                      <div class="caption">Clean Environment</div>
+                      <div class="text-below">Clean Environment</div>
+                  </div>
+                  <div class="item">
+                      <img src="{% static 'img/infra.jpg' %}" alt="Image 2">
+                      <div class="caption">Modern Infrastructure</div>
+                      <div class="text-below">Modern Infrastructure</div>
+                  </div>
+                  <div class="item">
+                      <img src="{% static 'img/skill.jpeg' %}" alt="Image 3">
+                      <div class="caption">Skill Development</div>
+                      <div class="text-below">Skill Development</div>
+                  </div>
+                  <div class="item">
+                      <img src="{% static 'img/water.jpg' %}" alt="Image 4">
+                      <div class="caption">Water Fall</div>
+                      <div class="text-below">Water Fall</div>
+                  </div>
+                  <div class="item">
+                      <img src="{% static 'img/IMG-20240912-WA0012.jpg' %}" alt="Image 5">
+                      <div class="caption">Looks</div>
+                      <div class="text-below">Students</div>
+                  </div>
+                  <div class="item">
+                      <img src="{% static 'img/hitech.jpeg' %}" alt="Image 6">
+                      <div class="caption">Hi-Tech Laboratories</div>
+                      <div class="text-below">Hi-Tech Laboratories</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    </div>
+</div>
+
+ <!-- About Section -->
+ <section id="about" class="about section">
+
+    <div class="container">
+
+      <div class="row gy-4 gx-5">
+
+        <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+          <img src="{% static 'img/about.jpg" class="img-fluid' %}" alt="">
+          <iframe width="90%" class="rop" height="400" src="https://www.youtube.com/embed/n4XnjmavROw?si=xyklZkVLgmroA0bU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          
+        </div>
+
+        <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+          <h3>About Us</h3>
+          <p>
+            At Bio Tech Lucknow, we focus on cutting-edge research in genomics, bioinformatics, and molecular biology, striving to translate scientific discoveries into practical solutions that benefit society. We pride ourselves on fostering a collaborative environment that encourages creativity and innovation. 
+          </p>
+          <ul>
+            <li>
+              <i class="fa-solid fa-vial-circle-check"></i>
+              <div>
+                <h5>Verify Credentials with Official Hospital or College Verification Badge</h5>
+              
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-pump-medical"></i>
+              <div>
+                <h5>Hand Sanitizers vs. Antiseptic Solutions: College and Hospital Use</h5>
+               
+            </li>
+            <li>
+              <i class="fa-solid fa-heart-circle-xmark"></i>
+              <div>
+                <h5>Alerts in Hospitals and Medical Education</h5>
+               
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  
+  </section><!-- /About Section -->
+
+  <!-- Stats Section -->
+  <section id="stats" class="stats section light-background">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+          <i class="fa-solid fa-user-doctor"></i>
+          <div class="stats-item">
+            <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Researchers</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+          <i class="fa-regular fa-hospital"></i>
+          <div class="stats-item">
+            <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Departments</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+          <i class="fas fa-flask"></i>
+          <div class="stats-item">
+            <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Research Labs</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+          <i class="fas fa-award"></i>
+          <div class="stats-item">
+            <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Awards</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Stats Section -->
+
+  <!-- Services Section -->
+  <section id="services" class="services section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Services</h2>
+      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item  position-relative">
+            <div class="icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Nesciunt Mete</h3>
+            </a>
+            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+          </div>
+        </div><!-- End Service Item -->
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item position-relative">
+            <div class="icon">
+              <i class="fas fa-pills"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Eosle Commodi</h3>
+            </a>
+            <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+          </div>
+        </div><!-- End Service Item -->
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-item position-relative">
+            <div class="icon">
+              <i class="fas fa-hospital-user"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Ledo Markt</h3>
+            </a>
+            <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+          </div>
+        </div><!-- End Service Item -->
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-item position-relative">
+            <div class="icon">
+              <i class="fas fa-dna"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Asperiores Commodit</h3>
+            </a>
+            <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
+            <a href="#" class="stretched-link"></a>
+          </div>
+        </div><!-- End Service Item -->
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-item position-relative">
+            <div class="icon">
+              <i class="fas fa-wheelchair"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Velit Doloremque</h3>
+            </a>
+            <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+            <a href="#" class="stretched-link"></a>
+          </div>
+        </div><!-- End Service Item -->
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-item position-relative">
+            <div class="icon">
+              <i class="fas fa-notes-medical"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Dolori Architecto</h3>
+            </a>
+            <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+            <a href="#" class="stretched-link"></a>
+          </div>
+        </div><!-- End Service Item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Services Section -->
+
+
+
+  <!-- Departments Section -->
+  <section id="departments" class="departments section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Agriculture Services Industry</h2>
+      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row">
+        <div class="col-lg-3">
+          <ul class="nav nav-tabs flex-column">
+            <li class="nav-item">
+              <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1">Agricultural Science</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-2">Chemistry and Materials Science</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-3">Soil Science</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-4">Agronomy</a>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="col-lg-9 mt-4 mt-lg-0">
+          <div class="tab-content">
+            <div class="tab-pane active show" id="departments-tab-1">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Agriculture & Health</h3>
+                  <p class="fst-italic">Agriculture impacts health through food production, while health practices ensure safe, nutritious agricultural practices.</p>
+                  <p>Agriculture and health are intertwined; sustainable farming ensures nutritious food, while health practices safeguard well-being. Both contribute to community wellness and environmental sustainability.</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'img/ag.jpeg' %}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="departments-tab-2">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Chemical & Metrical</h3>
+                  <p class="fst-italic">Chemical relates to substances and reactions, while metrical involves measurement and quantification of physical properties.</p>
+                  <p>Chemical work involves studying substances, their reactions, and properties, while metrical work focuses on measuring and quantifying physical attributes like length, mass, and volume.</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'img/chimacal.jpg' %}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="departments-tab-3">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Soil Analysis</h3>
+                  <p class="fst-italic">Soil analysis examines soil properties like nutrients, pH, and texture to optimize land use and plant growth.</p>
+                  <p>Soil analysis features include testing for nutrients, pH, texture, moisture, and contamination levels to assess soil health, guide fertilization, and optimize agricultural and land management practices.</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'img/soiltest.jpg' %}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="departments-tab-4">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3> Soil Tillage</h3>
+                  <p class="fst-italic">Soil tillage involves preparing soil through mechanical agitation for planting.</p>
+                  <p>Soil tillage involves mechanically altering soil to prepare it for planting, improving seedbed conditions, and enhancing soil health and structure.</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'img/soil.jpg' %}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section><!-- /Departments Section -->
+
+  <!-- Doctors Section -->
+  <section id="doctors" class="doctors section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Our Mentors</h2>
+      <p>Welcome to our esteemed mentors and officials! Your guidance and leadership inspire us all</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-member d-flex align-items-start">
+            <div class="pic"><img src="{% static 'img/Govermer.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Smt. Anandiben Patel</h4>
+              <span>Hon'ble Governor Uttar Pradesh</span>
+              <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""> <i class="bi bi-linkedin"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-member d-flex align-items-start">
+            <div class="pic"><img src="{% static 'img/yogiji.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Shri Yogi Adityanath</h4>
+              <span>Hon'ble Chief Minister Uttar Pradesh</span>
+              <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""> <i class="bi bi-linkedin"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="team-member d-flex align-items-start">
+            <div class="pic"><img src="{% static 'img/Minister2.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Shri Anil Kumar</h4>
+              <span>Hon'ble Cabinet Minister Uttar Pradesh</span>
+              <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""> <i class="bi bi-linkedin"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="team-member d-flex align-items-start">
+            <div class="pic"><img src="{% static "img/Prof JP Pandey.jpg" %}" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Prof.J.P.Pandey</h4>
+              <span>CEO Biotech Park, Lucknow</span>
+              <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""> <i class="bi bi-linkedin"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div><!-- End Team Member -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Doctors Section -->
+
+
+  <!-- Faq Section -->
+  <section id="faq" class="faq section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Frequently Asked Questions</h2>
+      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row justify-content-center">
+
+        <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="faq-container">
+
+            <div class="faq-item faq-active">
+              <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+              <div class="faq-content">
+                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+            <div class="faq-item">
+              <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
+              <div class="faq-content">
+                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+            <div class="faq-item">
+              <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+              <div class="faq-content">
+                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+            <div class="faq-item">
+              <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+              <div class="faq-content">
+                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+            <div class="faq-item">
+              <h3>Tempus quam pellentesque nec nam aliquam sem et tortor?</h3>
+              <div class="faq-content">
+                <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+            <div class="faq-item">
+              <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
+              <div class="faq-content">
+                <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi. Distinctio ipsam dolore et.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+          </div>
+
+        </div><!-- End Faq Column-->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Faq Section -->
+
+
+
+  <!--Add the galllary and award section-->
+  <div class="container">
+  <section id="gallery" class="gallery section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+ 
+      <h2>Biotech Award Winning Research Project</h2>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "centeredSlides": true,
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "breakpoints": {
+              "320": {
+                "slidesPerView": 1,
+                "spaceBetween": 0
+              },
+              "768": {
+                "slidesPerView": 3,
+                "spaceBetween": 20
+              },
+              "1200": {
+                "slidesPerView": 5,
+                "spaceBetween": 20
+              }
+            }
+          }
+        </script>
+        <div class="swiper-wrapper align-items-center">
+      
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="{% static 'img/IMG_4773.jpg' %}"><img src="{% static 'img/IMG_4773.jpg' %}" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="{% static 'img/IMG_4799.png' %}"><img src="{% static 'img/IMG_4799.png' %}" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="{% static 'img/IMG_4822.jpg' %}"><img src="{% static 'img/IMG_4822.jpg' %}" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="{% static 'img/IMG_4758.jpg' %}"><img src="{% static 'img/IMG_4758.jpg' %}"class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="{% static 'img/IMG_4822.jpg' %}"><img src="{% static 'img/IMG_4822.jpg' %}"class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="{% static 'img/IMG_4830.jpg' %}"><img src="{% static 'img/IMG_4830.jpg' %}" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="{% static 'img/IMG_4841.jpg' %}"><img src="{% static 'img/IMG_4841.jpg' %}" class="img-fluid" alt=""></a></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+  </section><!-- /Gallery Section -->
+</div>
+  <!--end the galllary and award section-->
+
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials section">
+
+    <div class="container">
+
+      <div class="row align-items-center">
+
+        <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+          <h3>Testimonials</h3>
+          <p>
+            Biotech Park Lucknow has been instrumental in our growth, offering exceptional research facilities and support. The collaborative environment and networking opportunities have accelerated our innovation. Highly recommend for any biotech enterprise seeking a dynamic and resourceful ecosystem.
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                }
+              }
+            </script>
+
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="d-flex">
+                    <img src="{% static 'img/head.jpg' %}" class="testimonial-img flex-shrink-0" alt="">
+                    <div>
+                      <h3>Sir JP Pandey</h3>
+                      <h4>Ceo &amp; Founder</h4>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>Biotech Park Lucknow has been instrumental in advancing our biotech innovations. The state-of-the-art facilities and supportive environment have greatly facilitated our R&D efforts. The park’s well-equipped labs, comprehensive infrastructure, and access to a network of experts have provided our startup with the resources needed to accelerate our development.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div><!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="d-flex">
+                    <img src="{% static 'img/25.jpg' %}" class="testimonial-img flex-shrink-0" alt="">
+                    <div>
+                      <h3>Amit Kumar</h3>
+                      <h4>Software Engineer</h4>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>The park’s modern infrastructure and commitment to innovation create an ideal environment for developing and deploying cutting-edge software applications. The integration between advanced biotech research and software development is seamless, thanks to the park's state-of-the-art facilities and collaborative culture.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div><!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="d-flex">
+                    <img src="{% static 'img/4.jpg' %}" class="testimonial-img flex-shrink-0" alt="">
+                    <div>
+                      <h3>Jena Karlis</h3>
+                      <h4>Store Owner</h4>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span> The park’s thriving ecosystem of biotech firms and professionals has greatly increased foot traffic and demand for our products and services. The park's emphasis on innovation and growth has created a vibrant local economy, and our store has benefited from the influx of scientists, researchers, and entrepreneurs.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div><!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="d-flex">
+                    <img src="{% static 'img/22.jpg' %}" class="testimonial-img flex-shrink-0" alt="">
+                    <div>
+                      <h3>Matt Brandon</h3>
+                      <h4>Freelancer</h4>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>The vibrant community of scientists and entrepreneurs fosters a collaborative atmosphere that is both inspiring and productive. For any biotech professional seeking a dynamic and resource-rich environment, Biotech Park Lucknow is a top choice</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div><!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="d-flex">
+                    <img src="{% static 'img/9.jpeg' %}" class="testimonial-img flex-shrink-0" alt="">
+                    <div>
+                      <h3>John Larson</h3>
+                      <h4>Entrepreneur</h4>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>The park's commitment to fostering innovation and providing a conducive environment for growth has made it an invaluable asset for our enterprise. We highly recommend Biotech Park Lucknow to any organization looking to advance its biotech ventures</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div><!-- End testimonial item -->
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /Testimonials Section -->
+
+  
+  
+
+    </div>
+
+  </section><!-- /Contact Section -->
+
+</main>
+
+<footer id="footer" class="footer light-background">
+
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">Biotech</span>
+        </a>
+        <div class="footer-contact pt-3">
+          <p>Biotech Park Sector G, Jankipuram</p>
+          <p>Kursi Road Lucknow-226021 UP INDIA</p>
+          <p class="mt-3"><strong>Phone:</strong> <span>+91 522 4012091 2365050</span></p>
+          <p><strong>Email:</strong> <span>pseceo@biotechpark.org.in</span></p>
+        </div>
+        <div class="social-links d-flex mt-4">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#">Facilities</a></li>
+          <li><a href="#">Incubation</a></li>
+          <li><a href="#">Networking</a></li>
+          <li><a href="#">Commercialization</a></li>
+          <li><a href="#">Training</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Important Links</h4>
+        <ul>
+          <li><a href="#">Tenders</a></li>
+          <li><a href="#">Downloads</a></li>
+          <li><a href="#">E-calender</a></li>
+          <li><a href="#">Directory</a></li>
+          <li><a href="#">Web Mail</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Certifications</h4>
+        <img src="{% static 'img/certification.jpg' %}" alt="">
+      
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">Amit Kumar</strong> <span>All Rights Reserved</span></p>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you've purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+      Designed by <a href="https://bootstrapmade.com/">Amit Kumar</a>
+    </div>
+  </div>
+
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Main JS File -->
+<script src="{% static 'js/main.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Include Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('.owl-carousel').owlCarousel({
+              loop: true,
+              margin: 10,
+              nav: true,
+              items: 1,
+              autoplay: true,
+              autoplayTimeout: 2000, // 2 seconds
+              autoplayHoverPause: true,
+              responsive: {
+                  0: {
+                      items: 1
+                  },
+                  600: {
+                      items: 3
+                  },
+                  1000: {
+                      items: 5
+                  }
+              }
+          });
+      });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+{% extends 'adminparent.html' %}
+{% load static %}
+{% block admin %}
+
+
+
+    <div class="container">
+     
+        <section class="section profile">
+          <div class="row">
+            <div class="col-xl-4">
+              <div class="card">
+                <div
+                  class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                  <img src="{% static 'img/head.jpg' %}" alt="Profile"
+                    class="rounded-circle">
+                  <h2>Prof JP Pandey</h2>
+                  <h5>CEO</h5>
+                  <div class="social-links mt-2">
+                    <a href="#" class="twitter"><i
+                        class="ri-twitter-x-line"></i></a>
+                    <a href="#" class="facebook"><i
+                        class="ri-facebook-circle-fill"></i></a>
+                    <a href="#" class="instagram"><i
+                        class="ri-instagram-line"></i></a>
+                    <a href="#" class="linkedin"><i
+                        class="ri-linkedin-box-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-8">
+              <div class="card">
+                <div class="card-body pt-3">
+                  <!-- Bordered Tabs -->
+                  <ul class="nav nav-tabs" id="profileTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link active" id="profile-overview-tab"
+                        data-bs-toggle="tab" href="#profile-overview"
+                        role="tab" aria-controls="profile-overview"
+                        aria-selected="true">Overview</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link" id="profile-edit-tab"
+                        data-bs-toggle="tab" href="#profile-edit"
+                        role="tab" aria-controls="profile-edit"
+                        aria-selected="false">Edit Profile</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link" id="profile-settings-tab"
+                        data-bs-toggle="tab" href="#profile-settings"
+                        role="tab" aria-controls="profile-settings"
+                        aria-selected="false">Settings</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link" id="profile-change-password-tab"
+                        data-bs-toggle="tab"
+                        href="#profile-change-password" role="tab"
+                        aria-controls="profile-change-password"
+                        aria-selected="false">Change Password</a>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content pt-2" id="profileTabContent">
+                    <div class="tab-pane fade show active"
+                      id="profile-overview" role="tabpanel"
+                      aria-labelledby="profile-overview-tab">
+                      <h5 class="card-title">About</h5>
+                      <p class="fst-italic" style="font-family:14px;">We
+                        believe in the pursuit of knowledge and
+                        intellectual rigor. Our programs are designed to
+                        challenge students and cultivate critical
+                        thinking, creativity, and a passion for lifelong
+                        learning. We strive to provide a curriculum that
+                        not only meets but exceeds national and global
+                        standards.</p>
+
+                      <h5 class="card-title mt-4">Profile Details</h5>
+                      <div class="row mt-2">
+                        <div class="col-lg-3 col-md-4 label"
+                          style="color:blue;">Full Name</div>
+                        <div class="col-lg-9 col-md-8">Prof JP
+                          Pandey</div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col-lg-3 col-md-4 label"
+                          style='color:blue;'>College</div>
+                        <div class="col-lg-9 col-md-8">Biotech Park,
+                          Lucknow</div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col-lg-3 col-md-4 label"
+                          style="color:blue;">Job</div>
+                        <div class="col-lg-9 col-md-8">CEO</div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col-lg-3 col-md-4 label"
+                          style="color:blue;">Country</div>
+                        <div class="col-lg-9 col-md-8">INDIA</div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col-lg-3 col-md-4 label"
+                          style="color:blue;">Address</div>
+                        <div class="col-lg-9 col-md-8">Biotech Park Sector
+                          G, Jankipuram, Kursi Road, Lucknow - 226021
+                          Uttar Pradesh</div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col-lg-3 col-md-4 label"
+                          style="color:blue;">Phone</div>
+                        <div class="col-lg-9 col-md-8">91 522 4012091,
+                          2365050</div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col-lg-3 col-md-4 label"
+                          style="color:blue;">Email</div>
+                        <div
+                          class="col-lg-9 col-md-8">psceo@biotechpark.org.in</div>
+                      </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="profile-edit"
+                      role="tabpanel" aria-labelledby="profile-edit-tab">
+                      <form>
+                        <div class="row mb-3">
+                          <label for="profileImage"
+                            class="col-md-4 col-lg-3 col-form-label">Profile
+                            Image</label>
+                          <div class="col-md-8 col-lg-9">
+                            <img src="{% static 'img/head.jpg' %}"
+                              alt="Profile">
+                            <div class="pt-2">
+                              <a href="#" class="btn btn-primary btn-sm"
+                                title="Upload new profile image">Upload</a>
+                              <a href="#" class="btn btn-danger btn-sm"
+                                title="Remove my profile image">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="fullName"
+                            class="col-md-4 col-lg-3 col-form-label">Full
+                            Name</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="fullName" type="text"
+                              class="form-control" id="fullName"
+                              value="Prof JP Pandey">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="college"
+                            class="col-md-4 col-lg-3 col-form-label">College</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="college" type="text"
+                              class="form-control" id="college"
+                              value="Biotech Park, Lucknow">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="Job"
+                            class="col-md-4 col-lg-3 col-form-label">Job</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="Job" type="text"
+                              class="form-control" id="job" value="CEO">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="country"
+                            class="col-md-4 col-lg-3 col-form-label">Country</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="Country" type="text"
+                              class="form-control" id="country"
+                              value="INDIA">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="Address"
+                            class="col-md-4 col-lg-3 col-form-label">Address</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="address" type="text"
+                              class="form-control" id="address"
+                              value="Biotech Park Secotor G, Jankipuram Kursi Road,Lucknow-226021">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="Phone"
+                            class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="Phone" type="text"
+                              class="form-control" id="Phone"
+                              value="91 5224012091, 2365050">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="mail"
+                            class="col-md-4 col-lg-3 col-form-label">Email</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="mail" type="text"
+                              class="form-control" id="mail"
+                              value="psceo@biotechpark.org.in">
+                          </div>
+                        </div>
+                        <!-- Repeat similar block for other fields -->
+                        <div class="text-center">
+                          <button type="submit"
+                            class="btn btn-primary">Save Changes</button>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="profile-settings"
+                      role="tabpanel"
+                      aria-labelledby="profile-settings-tab">
+                      <form>
+                        <div class="row mb-3">
+                          <label for="emailNotifications"
+                            class="col-md-4 col-lg-3 col-form-label">Email
+                            Notifications</label>
+                          <div class="col-md-8 col-lg-9">
+                            <div class="form-check">
+                              <input class="form-check-input"
+                                type="checkbox" id="changesMade" checked>
+                              <label class="form-check-label"
+                                for="changesMade">Changes made to your
+                                account</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input"
+                                type="checkbox" id="newProducts" checked>
+                              <label class="form-check-label"
+                                for="newProducts">Information on new
+                                products and services</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input"
+                                type="checkbox" id="proOffers">
+                              <label class="form-check-label"
+                                for="proOffers">Marketing and promo
+                                offers</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input"
+                                type="checkbox" id="securityNotify"
+                                checked disabled>
+                              <label class="form-check-label"
+                                for="securityNotify">Security
+                                alerts</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="text-center">
+                          <button type="submit"
+                            class="btn btn-primary">Save Changes</button>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="tab-pane fade"
+                      id="profile-change-password" role="tabpanel"
+                      aria-labelledby="profile-change-password-tab">
+                      <form>
+                        <div class="row mb-3">
+                          <label for="currentPassword"
+                            class="col-md-4 col-lg-3 col-form-label">Current
+                            Password</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="currentPassword" type="password"
+                              class="form-control" id="currentPassword">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="newPassword"
+                            class="col-md-4 col-lg-3 col-form-label">New
+                            Password</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="newPassword" type="password"
+                              class="form-control" id="newPassword">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="renewPassword"
+                            class="col-md-4 col-lg-3 col-form-label">Re-enter
+                            New Password</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="renewPassword" type="password"
+                              class="form-control" id="renewPassword">
+                          </div>
+                        </div>
+                        <div class="text-center">
+                          <button type="submit"
+                            class="btn btn-primary">Change
+                            Password</button>
+                        </div>
+                      </form>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+    </div>
+
+{% endblock %}

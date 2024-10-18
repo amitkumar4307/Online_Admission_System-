@@ -1,0 +1,77 @@
+{% extends 'adminparent.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="dashboard">
+  <!-- Top Cards -->
+  <div class="top-cards">
+    <div class="top-card-one"
+      style="text-align:center; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+      <h3></h3>
+   <a href="{% url 'adminapp:courseadd' %}" style="text-decoration: none;color:#000000"><i class="ri-book-shelf-line fa-2x"><button
+          class="btn btn-outline-dark" style="font-family: domain;">Add
+          Course</button></i>
+      <a href="#" class style="text-decoration: none;color:#000000"><p
+          class="p-1,ms-5" style="font-family: domain;">Total Course -
+          12</p></a>
+    </div>
+    <div class="top-card-two"
+      style="text-align:center; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+      <h3></h3>
+      <i class="ri-group-line fa-2x"><button
+          class="btn btn-outline-dark" style="font-family: domain;">Add
+          Student</button></i>
+      <a href="#" style="text-decoration: none;color:#000000"><p
+          style="font-family:domain;">Total Student - 50+<br />Request
+          Student - 20</p></a>
+
+    </div>
+    <div class="top-card-three"
+      style="text-align:center; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+      <h3></h3>
+      <i class="ri-calendar-2-line fa-2x"><button
+          class="btn btn-outline-dark"
+          style="font-family: domain;">Notice & Update</button></i>
+      <a href="#" style="text-decoration: none;color:#000000"><p
+          style="font-family: domain;">Incoming - 10 <br /> Forwording -
+          24</p></a>
+    </div>
+  </div>
+
+  <!-- Bottom Cards -->
+  <div class="bottom-cards mt-4">
+    <div class="bottom-card-status"
+      style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+      <h5 class="text-center" style="font-family: domain;">Course
+        Status</h5>
+      <hr>
+
+      <img src="{% static 'img/7.png' %}" alt="Course Status Pie Chart"
+        class="mx-auto" style="height:80%">
+      <hr>
+    </div>
+    <div class="bottom-card-progress"
+      style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+      <h5 class="text-center" style="font-family: domain;">Course
+        Progress</h5>
+      <hr>
+
+      <img src="{% static 'img/8.png' %}"
+        alt="Course Progress Pie Chart" style="height: 80%;">
+    </div>
+    <div class="bottom-card-popular"
+      style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+      <h5 class="text-center" style="font-family: domain;">Popular
+        Courses</h5>
+      <hr>
+      <ul>
+        <li>Bio Technology</li>
+        <li>Health and Science</li>
+        <li>Chemistry</li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

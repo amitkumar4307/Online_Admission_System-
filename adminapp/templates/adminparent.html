@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Bio-tech Park</title>
+    <meta name="description" content>
+    <meta name="keywords" content>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet" />
+
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet">
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet">
+    <style>
+      /* Body Styles */
+      body {
+          margin: 0;
+          padding: 0;
+          background-color: #e9ecef; /* Light gray background */
+          box-shadow: inset 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+      }
+
+      /* Custom Navbar Styles */
+      .navbar-custom {
+          background-color: #ffffff; /* White background for navbar */
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Shadow effect for navbar */
+          color: #000000; /* Black text color */
+      }
+      .navbar-custom .navbar-nav .nav-link {
+          color: #000000; /* Black text color for nav links */
+      }
+      .navbar-custom .navbar-nav .nav-link:hover {
+          background-color: #f8f9fa; /* Light gray background on hover */
+      }
+      
+      .navbar-custom .dropdown-menu {
+          right: 0;
+          left: auto;
+      }
+
+      /* Sidebar Styles */
+      .sidebar {
+          height: 100vh; /* Full viewport height */
+          width: 250px; /* Fixed width for sidebar */
+          position: fixed; /* Fixed position */
+          top: 56px; /* Positioned below the navbar */
+          left: 0;
+          background-color: #f3f6f8; /* Dark background color */
+          padding-top: 20px;
+          box-shadow: 4px 0 6px rgba(0,0,0,0.1); /* Shadow effect for sidebar */
+          transition: transform 0.3s ease; /* Smooth transition for sliding in/out */
+      }
+      .sidebar.hidden {
+          transform: translateX(-100%); /* Hide sidebar off-screen */
+      }
+      .sidebar .admin-photo {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+      .sidebar .admin-photo img {
+          width: 80px; /* Fixed width for profile image */
+          height: 80px; /* Fixed height for profile image */
+          border-radius: 50%; /* Circular profile image */
+      }
+      .sidebar a {
+          color: black ; /* White text color for links */
+          padding: 10px 15px;
+          text-decoration: none;
+          display: block;
+          border-radius: 4px;
+      }
+      .sidebar a:hover {
+          background-color: #495057; /* Darker background on hover */
+      }
+      .sidebar .logout {
+          position: absolute;
+          bottom: 20px;
+          width: 100%;
+          background-color: #dc3545; /* Red background color */
+          color: white; /* White text color */
+          text-align: center;
+          padding: 10px 0;
+          text-decoration: none;
+          border-radius: 4px;
+      }
+      .sidebar .logout:hover {
+          background-color: #c82333; /* Darker red on hover */
+      }
+
+      /* Main Content Styles */
+      .main-content {
+          margin-left: 250px; /* Offset for sidebar */
+          padding: 20px;
+          padding-top: 76px; /* Space for fixed navbar */
+          background-color: #ffffff; /* White background color for main content */
+          box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Shadow effect for main content */
+      }
+
+      /* Dropdown Menu Positioning */
+      .dropdown-menu {
+          right: 0;
+          left: auto;
+      }
+
+      /* Search Input Styles */
+      .search-input {
+          width: 300px; /* Fixed width for search input */
+          margin-right: 15px;
+      }
+
+      /* Profile Info Styles */
+      .profile-info img {
+          width: 100px; /* Fixed width for profile image */
+          height: 100px; /* Fixed height for profile image */
+          border-radius: 50%; /* Circular profile image */
+      }
+
+      /* Footer Icons Styles */
+      .footer-icons i {
+          margin-right: 10px;
+          font-size: 20px; /* Icon size */
+      }
+
+      /* AI Sidebar Styles */
+      .ai-sidebar {
+          width: 300px; /* Fixed width for AI sidebar */
+          height: 100vh; /* Full viewport height */
+          background-color: #343a40; /* Dark background color */
+          color: #fff; /* White text color */
+          position: fixed; /* Fixed position */
+          right: 0;
+          top: 56px; /* Positioned below the navbar */
+          transform: translateX(100%); /* Initially hidden off-screen */
+          transition: transform 0.3s ease; /* Smooth transition for sliding in/out */
+          box-shadow: -4px 0 6px rgba(0,0,0,0.1); /* Shadow effect for AI sidebar */
+          padding: 20px;
+          overflow-y: auto; /* Scrollable content */
+      }
+      .ai-sidebar.open {
+          transform: translateX(0); /* Slide in effect */
+      }
+      .ai-sidebar-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+      }
+      .ai-sidebar-header h4 {
+          margin: 0;
+      }
+      .ai-sidebar-content {
+          max-height: calc(100% - 60px); /* Max height for chat area */
+      }
+      .ai-sidebar-input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+      }
+      .ai-sidebar-button {
+          width: 100%;
+          padding: 10px;
+      }
+      .ai-message {
+          margin-bottom: 10px;
+      }
+      .ai-message.user {
+          text-align: right;
+      }
+      .ai-message.ai {
+          text-align: left;
+      }
+      .ai-message p {
+          border-radius: 5px;
+          padding: 10px;
+          display: inline-block;
+      }
+      .ai-message.user p {
+          background-color: #007bff; /* User message background color */
+          color: #fff; /* White text color */
+      }
+      .ai-message.ai p {
+          background-color: #495057; /* AI message background color */
+          color: #fff; /* White text color */
+      }
+
+      /* New Dropdown Section Styles */
+      .dropdown-content {
+          display: none;
+          padding: 15px;
+          background-color: #495057; /* Darker background color */
+          border-radius: 4px;
+          margin: 10px 0;
+      }
+      .dropdown-content.active {
+          display: block;
+      }
+      .dropdown-content textarea {
+          width: 100%;
+          height: 100px;
+          margin-bottom: 10px;
+      }
+      .dropdown-content input[type="file"] {
+          margin-bottom: 10px;
+      }
+      .dropdown-content button {
+          width: 100%;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+          .sidebar {
+              width: 100%; /* Full width for sidebar on small screens */
+              height: auto; /* Auto height */
+              position: relative; /* Relative position */
+          }
+          .main-content {
+              margin-left: 0; /* No offset for sidebar on small screens */
+          }
+          .ai-sidebar {
+              width: 100%; /* Full width for AI sidebar on small screens */
+              height: auto; /* Auto height */
+              transform: translateY(-100%); /* Initially hidden above the viewport */
+              bottom: 0;
+          }
+          .ai-sidebar.open {
+              transform: translateY(0); /* Slide up effect */
+          }
+      }
+
+
+
+
+
+      /*--------------------------------------------------------------
+      # Profie Page
+      --------------------------------------------------------------*/
+      .profile .profile-card img {
+        max-width: 120px;
+      }
+      
+      .profile .profile-card h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #2c384e;
+        margin: 10px 0 0 0;
+      }
+      
+      .profile .profile-card h3 {
+        font-size: 18px;
+      }
+      
+      .profile .profile-card .social-links a {
+        font-size: 20px;
+        display: inline-block;
+        color: rgba(1, 41, 112, 0.5);
+        line-height: 0;
+        margin-right: 10px;
+        transition: 0.3s;
+      }
+      
+      .profile .profile-card .social-links a:hover {
+        color: #012970;
+      }
+      
+      .profile .profile-overview .row {
+        margin-bottom: 20px;
+        font-size: 15px;
+      }
+      
+      .profile .profile-overview .card-title {
+        color: #012970;
+      }
+      
+      .profile .profile-overview .label {
+        font-weight: 600;
+        color: rgba(1, 41, 112, 0.6);
+      }
+      
+      .profile .profile-edit label {
+        font-weight: 600;
+        color: rgba(1, 41, 112, 0.6);
+      }
+      
+      .profile .profile-edit img {
+        max-width: 120px;
+      }
+      /*--------------------------------------------------------------
+      # Profie Page
+      --------------------------------------------------------------*/
+      .profile .profile-card img {
+        max-width: 120px;
+      }
+      
+      .profile .profile-card h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #2c384e;
+        margin: 10px 0 0 0;
+      }
+      
+      .profile .profile-card h3 {
+        font-size: 18px;
+      }
+      
+      .profile .profile-card .social-links a {
+        font-size: 20px;
+        display: inline-block;
+        color: rgba(1, 41, 112, 0.5);
+        line-height: 0;
+        margin-right: 10px;
+        transition: 0.3s;
+      }
+      
+      .profile .profile-card .social-links a:hover {
+        color: #012970;
+      }
+      
+      .profile .profile-overview .row {
+        margin-bottom: 20px;
+        font-size: 15px;
+      }
+      
+      .profile .profile-overview .card-title {
+        color: #012970;
+      }
+      
+      .profile .profile-overview .label {
+        font-weight: 600;
+        color: rgba(1, 41, 112, 0.6);
+      }
+      
+      .profile .profile-edit label {
+        font-weight: 600;
+        color: rgba(1, 41, 112, 0.6);
+      }
+      
+      .profile .profile-edit img {
+        max-width: 120px;
+      }
+      /*--------------------------------------------------------------
+      # Profie Page
+      --------------------------------------------------------------*/
+      .profile .profile-card img {
+        max-width: 120px;
+      }
+      
+      .profile .profile-card h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #2c384e;
+        margin: 10px 0 0 0;
+      }
+      
+      .profile .profile-card h3 {
+        font-size: 18px;
+      }
+      
+      .profile .profile-card .social-links a {
+        font-size: 20px;
+        display: inline-block;
+        color: rgba(1, 41, 112, 0.5);
+        line-height: 0;
+        margin-right: 10px;
+        transition: 0.3s;
+      }
+      
+      .profile .profile-card .social-links a:hover {
+        color: #012970;
+      }
+      
+      .profile .profile-overview .row {
+        margin-bottom: 20px;
+        font-size: 15px;
+      }
+      
+      .profile .profile-overview .card-title {
+        color: #012970;
+      }
+      
+      .profile .profile-overview .label {
+        font-weight: 600;
+        color: rgba(1, 41, 112, 0.6);
+      }
+      
+      .profile .profile-edit label {
+        font-weight: 600;
+        color: rgba(1, 41, 112, 0.6);
+      }
+      
+      .profile .profile-edit img {
+        max-width: 120px;
+      }
+      /*--------------------------------------------------------------
+      # F.A.Q Page
+      --------------------------------------------------------------*/
+      .faq .basic h6 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #4154f1;
+      }
+      
+      .faq .basic p {
+        color: #6980aa;
+      }
+      
+      /*--------------------------------------------------------------
+      # Contact
+      --------------------------------------------------------------*/
+      .contact .info-box {
+        padding: 28px 30px;
+      }
+      
+      .contact .info-box i {
+        font-size: 38px;
+        line-height: 0;
+        color: #4154f1;
+      }
+      
+      .contact .info-box h3 {
+        font-size: 20px;
+        color: #012970;
+        font-weight: 700;
+        margin: 20px 0 10px 0;
+      }
+      
+      .contact .info-box p {
+        padding: 0;
+        line-height: 24px;
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+      
+      .contact .php-email-form .error-message {
+        display: none;
+        color: #fff;
+        background: #ed3c0d;
+        text-align: left;
+        padding: 15px;
+        margin-bottom: 24px;
+        font-weight: 600;
+      }
+      
+      .contact .php-email-form .sent-message {
+        display: none;
+        color: #fff;
+        background: #18d26e;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 24px;
+        font-weight: 600;
+      }
+      
+      .contact .php-email-form .loading {
+        display: none;
+        background: #fff;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 24px;
+      }
+      
+      .contact .php-email-form .loading:before {
+        content: "";
+        display: inline-block;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        margin: 0 10px -6px 0;
+        border: 3px solid #18d26e;
+        border-top-color: #eee;
+        animation: animate-loading 1s linear infinite;
+      }
+      
+      .contact .php-email-form input,
+      .contact .php-email-form textarea {
+        border-radius: 0;
+        box-shadow: none;
+        font-size: 14px;
+        border-radius: 0;
+      }
+      
+      .contact .php-email-form input:focus,
+      .contact .php-email-form textarea:focus {
+        border-color: #4154f1;
+      }
+      
+      .contact .php-email-form input {
+        padding: 10px 15px;
+      }
+      
+      .contact .php-email-form textarea {
+        padding: 12px 15px;
+      }
+      
+      .contact .php-email-form button[type=submit] {
+        background: #4154f1;
+        border: 0;
+        padding: 10px 30px;
+        color: #fff;
+        transition: 0.4s;
+        border-radius: 4px;
+      }
+      
+      .contact .php-email-form button[type=submit]:hover {
+        background: #5969f3;
+      }
+      
+      @keyframes animate-loading {
+        0% {
+          transform: rotate(0deg);
+        }
+      
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      
+      /*--------------------------------------------------------------
+      # Error 404
+      --------------------------------------------------------------*/
+      .error-404 {
+        padding: 30px;
+      }
+      
+      .error-404 h1 {
+        font-size: 180px;
+        font-weight: 700;
+        color: #4154f1;
+        margin-bottom: 0;
+        line-height: 150px;
+      }
+      
+      .error-404 h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #012970;
+        margin-bottom: 30px;
+      }
+      
+      .error-404 .btn {
+        background: #51678f;
+        color: #fff;
+        padding: 8px 30px;
+      }
+      
+      .error-404 .btn:hover {
+        background: #3e4f6f;
+      }
+      
+      @media (min-width: 992px) {
+        .error-404 img {
+          max-width: 50%;
+        }
+      }
+      .profile .profile-card img {
+        max-width: 120px;
+      }
+      
+      .profile .profile-card h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #2c384e;
+        margin: 10px 0 0 0;
+      }
+      
+      .profile .profile-card h3 {
+        font-size: 18px;
+      }
+      
+      .profile .profile-card .social-links a {
+        font-size: 20px;
+        display: inline-block;
+        color: rgba(1, 41, 112, 0.5);
+        line-height: 0;
+        margin-right: 10px;
+        transition: 0.3s;
+      }
+      
+      .profile .profile-card .social-links a:hover {
+        color: #012970;
+      }
+      
+      .profile .profile-overview .row {
+        margin-bottom: 20px;
+        font-size: 15px;
+      }
+      
+      .profile .profile-overview .card-title {
+        color: #012970;
+      }
+      
+      .profile .profile-overview .label {
+        font-weight: 600;
+        color: rgba(1, 41, 112, 0.6);
+      }
+      
+      .profile .profile-edit label {
+        font-weight: 600;
+        color: rgba(1, 41, 112, 0.6);
+      }
+      
+      .profile .profile-edit img {
+        max-width: 120px;
+      }
+   
+
+  </style>
+    <style>
+    /* Base styles */
+    .dashboard {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .top-cards, .bottom-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .top-cards .top-card-one,
+    .top-cards .top-card-two,
+    .top-cards .top-card-three,
+    .bottom-cards .bottom-card-status,
+    .bottom-cards .bottom-card-progress,
+    .bottom-cards .bottom-card-popular {
+        flex: 1 1 calc(33.333% - 20px); /* Adjust the width to fit 3 cards in a row */
+        box-sizing: border-box;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+    
+    .top-cards img, .bottom-cards img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 1200px) {
+        .top-cards .top-card-one,
+        .top-cards .top-card-two,
+        .top-cards .top-card-three,
+        .bottom-cards .bottom-card-status,
+        .bottom-cards .bottom-card-progress,
+        .bottom-cards .bottom-card-popular {
+            flex: 1 1 calc(50% - 20px); /* Adjust the width to fit 2 cards in a row */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .top-cards .top-card-one,
+        .top-cards .top-card-two,
+        .top-cards .top-card-three,
+        .bottom-cards .bottom-card-status,
+        .bottom-cards .bottom-card-progress,
+        .bottom-cards .bottom-card-popular {
+            flex: 1 1 100%; /* Stack cards in a single column */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .dashboard {
+            padding: 10px;
+        }
+    
+        .top-cards, .bottom-cards {
+            gap: 10px;
+        }
+    }
+    
+    </style>
+  </head>
+  <body>
+
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+      <img src="{% static 'img/biologo.png' %}" alt class="ml-5" height="40"><a
+        class="navbar-brand ml-1" href="#"
+        style="color: black;font-size:25px "><b>Biotech Park,Lucknow</b></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="form-inline ml-auto">
+          <input class="form-control search-input" type="search"
+            placeholder="Search" aria-label="Search">
+        </form>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-envelope"></i></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="profileDropdown"
+              role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <img src="{% static 'img/Admin.jpg' %}" alt="Profile Photo"
+                class="rounded-circle">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="profileDropdown">
+              <a class='dropdown-item' href="#profile"
+                id="profileLink">Profile</a>
+              <a class="dropdown-item" href="#" id="accountSettingsLink">Account
+                Settings</a>
+              <a class="dropdown-item" href="#" id="needHelpLink">Need Help</a>
+              <a class="dropdown-item" href="{% url 'studentlogin' %}">Sign
+                Out</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="toggleSidebar"><i
+                class="fas fa-ellipsis-h"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" style="font-family:domain; font-size:18px">
+        
+      <div class="admin-photo">
+        <img src="{% static 'img/head.jpg' %}" alt="Admin Photo">
+        <h4><b>JP Pandey</b></h4>
+      </div>
+      <a href="{% url 'adminapp:admindashboard' %}">Dashboard</a>
+      <a href="{% url 'adminapp:adminprofile' %}" id="profileLink">Profile</a>
+     <a href="{% url 'adminapp:coursedashboard' %}" id="course">Course</a>
+        
+      
+      <a href="{% url 'adminapp:studentboard' %}" id='instructor'>Student</a>
+     
+      <div>
+        <a href="{% url 'adminapp:showenq' %}">View Enquiries</a>
+      </div>
+      <a href="#student-enrollment" data-toggle="collapse">Student
+        Enrollment</a>
+      <div id="student-enrollment" class="collapse">
+        <a href="#enroll-student">Enroll Student</a>
+        <a href="#manage-student">Manage Student</a>
+        <a href="#student-classes">Student Classes</a>
+      </div>
+      
+      <a href="#report" data-toggle="collapse">Report</a>
+      <div id="report" class="collapse">
+        <a href="#class-report">Class Report</a>
+        <a href="#student-report">Student Enquiary</a>
+      </div>
+      <a href="#settings" data-toggle="collapse">Settings</a>
+      <div id="settings" class="collapse">
+        <a href="#general-settings">General Settings</a>
+        <a href="#account-settings">Account Settings</a>
+      </div>
+      <a href="#extra" data-toggle="collapse">Logout</a>
+      <div id="extra" class="collapse dropdown-content">
+        <textarea placeholder="Write something here..."> Hello</textarea>
+        <input type="file" id="fileUpload">
+        <button class="btn btn-primary">Add</button>
+      </div>
+
+    </div>
+
+    <!-- Main Content -->
+<div class="main-content">
+    <div class="dashboard">
+       
+        {% block admin %}
+        
+        {% endblock %}
+    </div>
+    
+        
+ </div>
+       
+
+
+
+
+      <!-- Bootstrap and JavaScript -->
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+      <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+      <script>
+      // JavaScript to handle showing/hiding content based on the sidebar links
+      
+      // JavaScript for profile dropdown and AI sidebar
+      document.getElementById('profileLink').addEventListener('click', function() {
+          document.getElementById('profile').classList.remove('d-none');
+          document.getElementById('aiSidebar').classList.remove('open');
+      });
+
+      document.getElementById('accountSettingsLink').addEventListener('click', function() {
+          document.getElementById('profile').classList.add('d-none');
+          document.getElementById('aiSidebar').classList.remove('open');
+      });
+
+      document.getElementById('needHelpLink').addEventListener('click', function() {
+          document.getElementById('aiSidebar').classList.toggle('open');
+          document.getElementById('profile').classList.add('d-none');
+      });
+
+      document.getElementById('closeAiSidebar').addEventListener('click', function() {
+          document.getElementById('aiSidebar').classList.remove('open');
+      });
+
+      document.getElementById('aiSubmit').addEventListener('click', function() {
+          const input = document.getElementById('aiInput').value;
+          const chat = document.getElementById('aiChat');
+          if (input.trim()) {
+              chat.innerHTML += `<div class="ai-message user"><p>${input}</p></div>`;
+              // Simulate AI response
+              setTimeout(() => {
+                  chat.innerHTML += `<div class="ai-message ai"><p>This is a response to "${input}".</p></div>`;
+                  chat.scrollTop = chat.scrollHeight; // Auto scroll to the latest message
+              }, 500);
+              document.getElementById('aiInput').value = '';
+          }
+      });
+
+  </script>
+
+      <script>
+   
+  </script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    </body>
+  </html>

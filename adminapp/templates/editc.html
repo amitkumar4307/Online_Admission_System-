@@ -1,0 +1,83 @@
+{% extends 'adminparent.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="container">
+    <div class="col-sm-12">
+        <h1 style="text-align:center;">Course</h1>   
+          <form action="{% url 'editcourse' %}" method="post" class="row">
+          {% csrf_token %}
+            <table class="table text-light w-75 mx-auto">
+              
+                <tr>
+                    <td>Course session</td>
+                    <td>
+                        
+                           
+                            <select id="adminTypeSelect" class="form-select mt-3" name="course_session" value="{{emp.course_session}}">
+                                <option selected>----Select Session----</option>
+                                <option value="1">2023-24</option>
+                                <option value="2">2024-25</option>
+                                <option value="3">2025-26</option>
+                                <option value="3">2026-27</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Course Name</td>
+                    <td>
+                    
+                            <input type="text" name="course_name" class="form-control" vlaue="{{emp.course_name}}">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Course Fees</td>
+                    <td>
+                        <input type="text" name="course_fees" class="form-control"  vlaue="{{emp.course_fees}}">
+                    </td>
+                <tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>
+                            <input type="date" name="date" class="form-control" vlaue="{{emp.course_date}}">
+                        </td>
+                      
+                    </tr>
+                
+                    <td colspan="2" class="p-4 text-center">
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </td>
+                </tr>
+            </table>
+          </form>
+    </div>
+</div>
+<div class="container">
+    <div class="col-sm-12">
+        <table class="table table-bordered text-center text-light">
+            <tr>
+                <th>Course ID</th>
+                <th>Course Session</th>
+                <th>Course Name</th>
+                <th>Course fees</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+            {% for s in sub %}
+            <tr>
+                <td>{{s.id}}</td>
+                <td>{{s.course_session}}</td>
+                <td>{{s.course_name}}</td>
+                <td>{{s.course_fees}}</td>
+                <td>{{s.course_date}}</td>
+                
+            </tr>
+            {% endfor %} 
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock %}

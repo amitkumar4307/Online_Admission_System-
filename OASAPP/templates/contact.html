@@ -1,0 +1,310 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Bio-tech Park</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Vendor CSS Files -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <style>
+        /* styles.css */
+
+body {
+    background-color: #fbfcfc;
+    
+}
+
+h1 {
+    color: #343a40;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.embed-responsive {
+    margin-top: 20px;
+}
+
+    </style>
+
+
+</head>
+
+<body class="index-page" >
+
+    <header id="header" class="header sticky-top">
+
+        <div class="topbar d-flex align-items-center">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+                <div class="contact-info d-flex align-items-center">
+                    <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com"> The Biotech Park Is Open From 9:00 am to 7:00 pm</a></i>
+
+                </div>
+                <div class="social-links d-none d-md-flex align-items-center">
+                    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Bar -->
+
+        <div class="branding d-flex align-items-center">
+
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+                <a href="index.html" class="logo d-flex align-items-center me-auto">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.png" alt=""> -->
+                    <h1 class="sitename"><img src="{% static 'img/biologo.png' %}" class="img-fluid" alt="">Biotech Park, Lucknow<br/>
+                        <p style="margin-left:42px;font-size:14px;">
+                            <i>Where cutting edge science prospers...</i></p>
+                    </h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="#hero" class="active">Home<br></a></li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              The Park <span class="hello"></span>
+                          </a>
+                          <ul class="dropdown-menu" style="border-radius:0px;">
+                              <li><a class="dropdown-item" href="#">Organization</a></li>
+                              <li><a class="dropdown-item" href="#">Why Biotech Park Lucknow ?</a></li>
+                              <li><a class="dropdown-item" href="#">Locations</a></li>
+                              <li><a class="dropdown-item" href="#">Certifications</a></li>
+                              <li><a class="dropdown-item" href="#">Our Collaborators</a></li>
+                              <li><a class="dropdown-item" href="#">Knowledge Network</a></li>
+                              <li><a class="dropdown-item" href="#">Outreach Activities</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item fw-bold" href="#">The People</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">CEO</a></li>
+                              <li><a class="dropdown-item" href="#">Distinguished Science And Members</a></li>
+                              <li><a class="dropdown-item" href="#">Scientific Staff</a></li>
+                              <li><a class="dropdown-item" href="#">Administration</a></li>
+                              <li><a class="dropdown-item" href="#">Technical Support</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Facilities <span class="hello"></span>
+                        </a>
+                        <ul class="dropdown-menu" style="border-radius:0px;">
+                            <li><a class="dropdown-item" href="/home/Services_Overview">Services</a></li>
+                            <li><a class="dropdown-item" href="/home/Research">Research Park & Labs</a></li>
+                            <li><a class="dropdown-item" href="/home/Error">Conference Hall</a></li>
+
+                        </ul>
+                       </li>
+                       <li class="nav-item dropdown dddd">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Skill Development <span class="hello"></span>
+                        </a>
+                        <ul class="dropdown-menu dddd" style="border-radius:0px;">
+                            <li><a class="dropdown-item hhh" href="/home/Error">HRD Overview </a></li>
+                            <li><a class="dropdown-item" href="/home/training_Programme">Training Program and Educational Outreach</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item dddd" href="/home/Certificate">Certificate Courses Approved By <br />Baba Saheb Bhimrao Amdedkar University </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/home/UP_Skill_Development">Up Skill Development Mission Sponsored <br />Program </a></li>
+                            <li><a class="dropdown-item" href="/home/Vocational_Training">Vocational Training</a></li>
+  
+  
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Business <span class="hello"></span>
+                      </a>
+                      <ul class="dropdown-menu" style="border-radius:0px;">
+                          <li><a class="dropdown-item" href="#">Tenders</a></li>
+                          <li><a class="dropdown-item" href="#">Policy Documents</a></li>
+                          <li><a class="dropdown-item" href="#">Resident Companies</a></li>
+                          <li><a class="dropdown-item" href="#">Biotech Funding</a></li>
+
+                      </ul>
+                  </li>
+                        <li><a href="#">Success Stories<br></a></li>
+                        <li><a href="#">News & Events<br></a></li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Contact
+                          </a>
+                          <ul class="dropdown-menu" style="border-radius:0px; margin-left:-300px;">
+                              <li><a class="dropdown-item" href="#">Training Program For Student From North-East India</a></li>
+                              <li><a class="dropdown-item" href="/home/Error">Training Program </a></li>
+                              <li><a class="dropdown-item" href="/home/Error">Services</a></li>
+                              <li><a class="dropdown-item" href="/home/Error">General</a></li>
+                              <li class="nav-item dropdown"><a class="dropdown-item" href="#">User</a>
+                                <ul class="dropdown-menu" style="border-radius:0px; margin-left:187px;">
+                                  <li><a class="dropdown-item" href="{% url 'studentlogin' %}">Login & Registration</a></li>
+                                  <li><a class="dropdown-item" href="#">Enquiry</a></li>
+                                  <li><a class="dropdown-item" href="#">Contact</a></li>
+                                </ul>
+                              </li>
+
+                          </ul>
+                        </li>
+                  
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+
+
+            </div>
+
+        </div>
+
+    </header>
+   
+ 
+<!---New logn page-->
+<!-- Scrollable modal -->
+ <div class="container mt-5" >
+        <h1 class="text-center mb-4">Contact us</h1>
+       
+        <div class="row">
+            <div class="col-md-6">
+                <form method="post" action="{% url 'contact'%}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_name"><i class="fas fa-user"></i> Name</label>
+                        <input type="text" name="name" id="id_name" class="form-control" value="{{ form.name.value }}" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_gender"><i class="fas fa-genderless"></i> Gender</label>
+                        <select name="gender" id="id_gender" class="form-control">
+                            <option value="">Select your gender</option>
+                            <option value="Male" {% if form.gender.value == 'Male' %}selected{% endif %}>Male</option>
+                            <option value="Female" {% if form.gender.value == 'Female' %}selected{% endif %}>Female</option>
+                            <option value="Other" {% if form.gender.value == 'Other' %}selected{% endif %}>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_address"><i class="fas fa-address-book"></i> Address</label>
+                        <textarea name="address" id="id_address" class="form-control" rows="3" placeholder="Enter your address">{{ form.address.value }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_contactno"><i class="fas fa-phone"></i> Contact Number</label>
+                        <input type="text" name="contactno" id="id_contactno" class="form-control" value="{{ form.contactno.value }}" placeholder="Enter your contact number">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_emailaddress"><i class="fas fa-envelope"></i> Email Address</label>
+                        <input type="email" name="emailaddress" id="id_emailaddress" class="form-control" value="{{ form.emailaddress.value }}" placeholder="Enter your email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_enquirytext"><i class="fas fa-comment"></i> Enquiry</label>
+                        <textarea name="enquirytext" id="id_enquirytext" class="form-control" rows="4" placeholder="Enter your enquiry">{{ form.enquirytext.value }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_enquirydate"><i class="fas fa-calendar-day"></i> Enquiry Date</label>
+                        <input type="date" name="enquirydate" id="id_enquirydate" class="form-control" value="{{ form.enquirydate.value }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <!-- Embed a Google Map -->
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1312363820934!2d-122.41700708468156!3d37.77492977975917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808d1c16b28b%3A0x5a4c1b9b5e0d2800!2sSan+Francisco%2C+CA!5e0!3m2!1sen!2sus!4v1608294909468!5m2!1sen!2sus" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+  <!-- Modal -->
+<!-- Modal -->
+
+
+<!--End login page-->
+
+   <!--end Button Modal-->
+
+<main class="main">
+ <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                }
+              }
+            </script>    
+</main>
+
+<!--footer-->
+  <div class="container copyright text-center mt-5">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename mt-5">Amit Kumar</strong> <span>All Rights Reserved</span></p>
+    <div class="credits">
+      Designed by <a href="#">Amit Kumar</a>
+    </div>
+  </div>
+
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+
+
+
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+<!-- Main JS File -->
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

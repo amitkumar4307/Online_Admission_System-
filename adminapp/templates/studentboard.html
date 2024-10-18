@@ -1,0 +1,75 @@
+{% extends 'adminparent.html' %}
+{% load static %}
+{% block admin %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-container {
+            margin-top: 20px;
+        }
+        .image-card {
+            text-align: center;
+        }
+        .image-card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5" id='instructor'>
+        <div class="card-container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="background-color:lightgrey;box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Add Student</h5>
+                            <p class="card-text">Add a new student to the system.</p>
+                            <a href="{% url 'adminapp:addstudent' %}" class="btn btn-primary">Add Student</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Edit Details</h5>
+                            <p class="card-text">Update the details of an existing student.</p>
+                            <a href="#" class="btn btn-secondary">Edit Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" >
+                    <div class="card" style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">
+                        <div class="card-body">
+                            <h5 class="card-title">View Student</h5>
+                            <p class="card-text">View the details of a student.</p>
+                            <a href="#" class="btn btn-success">View Student</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container mt-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card image-card" style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">
+                        <div class="card-body">
+                           
+                            <img src="{% static 'img/12.jpg' %}" alt="Student Image" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

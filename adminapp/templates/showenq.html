@@ -1,0 +1,37 @@
+{% extends "adminparent.html" %}
+{% block admin %}
+
+<div class="container">
+    <h4 class="text-center" style="font-family: domain;background-color:lightgrey;font-size:30px;">Enquiary View</h4>
+    <table class="table">
+        <tr style="background-color:black;color:white">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Email Address</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        {% for i in enq %}
+        <tr>
+          <td>{{i.id}}</td>
+          <td>{{i.name}}</td>
+          <td>{{i.gender}}</td>
+          <td>{{i.address}}</td>
+          <td>{{i.contactno}}</td>
+          <td>{{i.emailaddress}}</td>
+          <td>{{i.enquirytext}}</td>
+          <td>{{i.enquirydate}}</td>
+          <td><a href="#" class="btn btn-sm btn-danger"><i
+                class="fa-solid fa-trash"></i></a>
+          </td>
+        </tr>
+        
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
